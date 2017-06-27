@@ -3,6 +3,7 @@ package com.anz.rpncalc;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+import com.anz.rpncalc.calculator.RPNCalculator;
 import com.anz.rpncalc.validation.RPNCalcException;
 
 public class Main {
@@ -11,7 +12,7 @@ public class Main {
 	
 		System.out.println("RPN Calculator Command: ");
 		Scanner command = new Scanner(System.in);
-		final RPNCalc calc = new RPNCalc();
+		final RPNCalculator calc = new RPNCalculator();
 	    boolean running = true;
 	    String commandLine = new String("");
 
@@ -31,7 +32,7 @@ public class Main {
 						System.out.println("Divided by zero exception");
 					}
 		        	System.out.print("Stack: ");
-		        	for (BigDecimal number : calc.getNumberStack()) {
+		        	for (BigDecimal number : calc.getNumbers()) {
 	                    System.out.print(calc.formatNumber(number) + " ");
 	                }
 		        	System.out.println("");

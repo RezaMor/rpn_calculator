@@ -1,8 +1,15 @@
-package com.anz.rpncalc;
+package com.anz.rpncalc.util;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+/**
+ * Custom implementation for SQRT as BigDecimal does not have any implementation for 
+ * this operator. We don't want to cast BigDecimal to Double to prevent loss of precision
+ * 
+ * @author moravejir
+ *
+ */
 public class BigDecimalUtils {
 	
 	/**

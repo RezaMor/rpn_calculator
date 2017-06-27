@@ -2,7 +2,7 @@ package com.anz.rpncalc;
 
 import java.math.BigDecimal;
 
-import com.anz.rpncalc.RPNCalcConstants.OperationType;
+import com.anz.rpncalc.constant.RPNCalcConstants.OperationType;
 
 /**
  * We only save (1) numbers and (2) the operation type applied to the numbers
