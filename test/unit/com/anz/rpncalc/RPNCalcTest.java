@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Stack;
 
 import com.anz.rpncalc.calculator.RPNCalculator;
-import com.anz.rpncalc.validation.RPNCalcException;
+import com.anz.rpncalc.exception.RPNCalcException;
 
 
 public abstract class RPNCalcTest {

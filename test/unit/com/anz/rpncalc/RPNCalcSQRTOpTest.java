@@ -2,7 +2,7 @@ package com.anz.rpncalc;
 
 import org.junit.Test;
 
-import com.anz.rpncalc.validation.RPNCalcException;
+import com.anz.rpncalc.exception.RPNCalcException;
 
 
 public class RPNCalcSQRTOpTest extends RPNCalcTest {
