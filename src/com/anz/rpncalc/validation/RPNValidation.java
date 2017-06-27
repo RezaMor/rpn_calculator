@@ -1,5 +1,7 @@
 package com.anz.rpncalc.validation;
 
+import com.anz.rpncalc.exception.RPNCalcException;
+
 public class RPNValidation {
 
 	public static boolean isNumber(String input) {

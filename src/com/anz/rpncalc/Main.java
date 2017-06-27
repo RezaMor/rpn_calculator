@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 import com.anz.rpncalc.calculator.RPNCalculator;
-import com.anz.rpncalc.validation.RPNCalcException;
+import com.anz.rpncalc.exception.RPNCalcException;
 
 public class Main {
 	

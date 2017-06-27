@@ -7,9 +7,9 @@ import java.math.RoundingMode;
 import java.util.Stack;
 
 import com.anz.rpncalc.constant.RPNCalcConstants;
+import com.anz.rpncalc.exception.RPNCalcException;
 import com.anz.rpncalc.operation.RPNOperator;
 import com.anz.rpncalc.util.BigDecimalUtils;
-import com.anz.rpncalc.validation.RPNCalcException;
 import com.anz.rpncalc.validation.RPNValidation;
 
 /**

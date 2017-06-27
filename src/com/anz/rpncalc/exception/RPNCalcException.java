@@ -1,4 +1,4 @@
-package com.anz.rpncalc.validation;
+package com.anz.rpncalc.exception;
 
 public class RPNCalcException extends Exception {
     
