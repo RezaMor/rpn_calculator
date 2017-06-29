@@ -6,6 +6,14 @@ import java.util.Scanner;
 import com.anz.rpncalc.calculator.RPNCalculator;
 import com.anz.rpncalc.exception.RPNCalcException;
 
+/**
+ * Main class to run Reverse Polish Notation (RPN) calculator,
+ * the class waits for the input from the user. It evaluates each line and prints the RPN stack to the user
+ * after calculation. If an Exception or Error happens during calculation, a message is displayed on the console.
+ * 
+ * @author moravejir
+ *
+ */
 public class Main {
 	
 	public static void main(String[] args) {

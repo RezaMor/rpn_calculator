@@ -13,7 +13,7 @@ import com.anz.rpncalc.util.BigDecimalUtils;
 import com.anz.rpncalc.validation.RPNValidation;
 
 /**
- * reverse polish notation (RPN) calculator
+ * Reverse Polish Notation (RPN) calculator
  * @author moravejir
  *
  */
@@ -27,8 +27,15 @@ public class RPNCalculator {
 		operator = new RPNOperator();
 	}
 
-	/** 
-	 * reverse polish notation calculator.
+	/**
+	 * This function determines which operation (+ - * / sqrt undo, or clear) has been requested by the user
+	 * and runs the related operator on the entered operands.
+	 * If none of the operations, by default is assumes it is number and pushes the number into a stack.
+	 * One an operation found, it pops the operands (numbers of pops depends on the operation type), calculates the result
+	 * and pushes the result back to the stack.
+	 * 
+	 * @param input -- line of operands and operators entered by the user
+	 * @throws RPNCalcException
 	 */
 	public void doCalc(String input) throws RPNCalcException {
     

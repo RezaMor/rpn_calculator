@@ -5,9 +5,8 @@ import java.math.BigDecimal;
 import com.anz.rpncalc.constant.RPNCalcConstants.OperationType;
 
 /**
- * We only save (1) numbers and (2) the operation type applied to the numbers
- * in the tracking stack so that in case on undo we can feed the right numbers into 
- * actual stack containing numbers.
+ * The class stores operands, result of the operation, and the operation type in the
+ * for each operation in RPN calculator. This is required by 'undo" later if requested by user.
  * @author moravejir
  *
  */

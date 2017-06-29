@@ -2,6 +2,12 @@ package com.anz.rpncalc.validation;
 
 import com.anz.rpncalc.exception.RPNCalcException;
 
+/**
+ * Class contains the validations needs to done on the operands, operators, and matching number of operands to 
+ * operators.
+ * @author moravejir
+ *
+ */
 public class RPNValidation {
 
 	public static boolean isNumber(String input) {

@@ -1,5 +1,10 @@
 package com.anz.rpncalc.constant;
 
+/**
+ * Constants
+ * @author moravejir
+ *
+ */
 public class RPNCalcConstants {
 	
 	/** Numbers are displayed to 10 decimal places (or less if it causes no loss of precision),
@@ -13,8 +18,8 @@ public class RPNCalcConstants {
 	public static final String SPACE = " ";	
 	
 	public static enum OperationType {
-	    TWO_OPERAND_OPERATOR,
-	    ONE_OPERAND_OPERATOR,
+	    BINARY_OPERATOR,
+	    UNARY_OPERATOR,
 	    PUSH
 	}
 	
