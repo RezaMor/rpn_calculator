@@ -1,4 +1,4 @@
-package com.anz.rpncalc;
+package com.anz.rpncalc.operator;
 
 import java.math.BigDecimal;
 
@@ -11,12 +11,12 @@ import com.anz.rpncalc.constant.RPNCalcConstants.OperationType;
  * @author moravejir
  *
  */
-public class TrackingElement {
+public class TrackOperation {
 
 	private BigDecimal number;
 	private OperationType operationType;
 	
-	public TrackingElement(BigDecimal number, OperationType operationType) {
+	public TrackOperation(BigDecimal number, OperationType operationType) {
 		this.setNumber(number);
 		this.setOperationType(operationType);
 	}

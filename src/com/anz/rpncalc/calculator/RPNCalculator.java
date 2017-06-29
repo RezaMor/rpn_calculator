@@ -8,7 +8,7 @@ import java.util.Stack;
 
 import com.anz.rpncalc.constant.RPNCalcConstants;
 import com.anz.rpncalc.exception.RPNCalcException;
-import com.anz.rpncalc.operation.RPNOperator;
+import com.anz.rpncalc.operator.RPNOperator;
 import com.anz.rpncalc.util.BigDecimalUtils;
 import com.anz.rpncalc.validation.RPNValidation;
 
@@ -72,7 +72,7 @@ public class RPNCalculator {
 	            	operator.clear(numbers);
 	                break;
 	            case "undo":
-	                //undo();
+	            	operator.undo(numbers);
 	                break;
 	            default:
 	            	operator.pushNumber(numbers, token[i], tokenPos);

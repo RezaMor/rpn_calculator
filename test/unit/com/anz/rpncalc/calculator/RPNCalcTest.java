@@ -1,4 +1,4 @@
-package com.anz.rpncalc;
+package com.anz.rpncalc.calculator;
 
 import static org.junit.Assert.assertEquals;
 
@@ -16,12 +16,16 @@ public abstract class RPNCalcTest {
 
 
 	protected void compareActualAndExpectedStack(String actual, String expected) throws RPNCalcException {
+		
 		calc = new RPNCalculator();
 		calc.doCalc(actual);
 		actualStack = calc.getNumbers();
 		
 		expectedStack = new Stack<BigDecimal>();
-		expectedStack.push(new BigDecimal(expected));
+		final String expectedArr[] = expected.split(" ");
+		for (int i = 0; i < expectedArr.length; i++) {
+			expectedStack.push(new BigDecimal(expectedArr[i]));
+		}
 		
 		assertEquals(actualStack, expectedStack);
 	}

@@ -1,4 +1,4 @@
-package com.anz.rpncalc;
+package com.anz.rpncalc.calculator;
 
 import org.junit.Test;
 

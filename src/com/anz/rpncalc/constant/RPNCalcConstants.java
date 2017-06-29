@@ -10,14 +10,17 @@ public class RPNCalcConstants {
 	 *  therefore, setting max precision of numbers in the Stack to 16. */
 	public static final int NUMBER_PRECISION = 16;
 	
-	public static final String SPACE = " ";
-	
-	
+	public static final String SPACE = " ";	
 	
 	public static enum OperationType {
 	    TWO_OPERAND_OPERATOR,
 	    ONE_OPERAND_OPERATOR,
-	    PUSH_POP
+	    PUSH
+	}
+	
+	public static class MESSAGES {
+		public static String NEGATIVE_SQRT = "x < 0 for sqrt(x) exception";
+		
 	}
 
 }
