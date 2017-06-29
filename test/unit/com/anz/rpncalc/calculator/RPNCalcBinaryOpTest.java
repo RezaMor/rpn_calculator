@@ -1,6 +1,8 @@
 package com.anz.rpncalc.calculator;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import com.anz.rpncalc.exception.RPNCalcException;
 
@@ -72,6 +74,16 @@ public class RPNCalcBinaryOpTest extends RPNCalcTest {
     public void testFourOperatorsOrMore() throws RPNCalcException {
 		compareActualAndExpectedStack("498712398473.49 98723.298 * 10.12341234123 * 124987.41243 / 124 +",
 				"3987773381229.4562151380788053");
+    }
+	
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
+	
+	@Test
+    public void testRPNCalInsufficientParamException() throws RPNCalcException {
+		expectedEx.expect(RPNCalcException.class);
+	    expectedEx.expectMessage("operator + (position: 4): insufficient parameters");
+	    compareActualAndExpectedStack("12 + 2 8 * / undo", "");
     }
 
 }

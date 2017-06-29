@@ -1,5 +1,8 @@
 package com.anz.rpncalc.operator;
 
+import static com.anz.rpncalc.constant.RPNCalcConstants.MESSAGES.DIVIDED_BY_ZERO_MSG;
+import static com.anz.rpncalc.constant.RPNCalcConstants.MESSAGES.NEGATIVE_SQRT_MSG;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Stack;
@@ -28,14 +31,20 @@ public class RPNOperator {
 		trackOperation(OperationType.PUSH, number);
 	}
 
-	public boolean evalBinary(Stack<BigDecimal> numbers, BiFunction<BigDecimal, BigDecimal, BigDecimal> operator) {
+	public boolean evalBinary(Stack<BigDecimal> numbers, BiFunction<BigDecimal, BigDecimal, BigDecimal> operator) throws RPNCalcException {
 		boolean insufficientParams = false;
 		if (numbers.size() < 2) {
 			return !insufficientParams;
 		}
 		BigDecimal number1 = numbers.pop();
 		BigDecimal number2 = numbers.pop();
-		BigDecimal number3 = operator.apply(number1, number2);
+		BigDecimal number3 = null;
+		try {
+			number3 = operator.apply(number1, number2);
+		} catch (ArithmeticException exception) {
+			throw new RPNCalcException(DIVIDED_BY_ZERO_MSG);
+		}
+		
 		trackOperation(OperationType.TWO_OPERAND_OPERATOR, number1, number2, number3);
 		numbers.push(number3);
 		return insufficientParams;
@@ -48,7 +57,7 @@ public class RPNOperator {
 		}
 		BigDecimal number1 = numbers.pop();
 		if (number1.compareTo(BigDecimal.ZERO) < 0) {
-			throw new RPNCalcException("NEGATIVE_SQRT");
+			throw new RPNCalcException(NEGATIVE_SQRT_MSG);
 		}
 		BigDecimal number2 = operator.apply(number1);
 		number2 = number2.setScale(RPNCalcConstants.NUMBER_PRECISION, RoundingMode.HALF_UP);
@@ -58,7 +67,11 @@ public class RPNOperator {
 		return insufficientParams;
 	}
 
-	public void undo(Stack<BigDecimal> numbers) {
+	public boolean undo(Stack<BigDecimal> numbers) throws RPNCalcException {
+		boolean insufficientParams = false;
+		if (numbers.size() < 1) {
+			return !insufficientParams;
+		}
 		TrackOperation trackOperation = trackOperationStack.pop();
 		if (trackOperation != null) {
 			switch (trackOperation.getOperationType()) {
@@ -76,6 +89,7 @@ public class RPNOperator {
 				break;
 			}
 		}
+		return insufficientParams;
 	}
 
 	public void clear(Stack<BigDecimal> numbers) {

@@ -68,11 +68,11 @@ public class RPNCalculator {
 	            			(n1) -> BigDecimalUtils.sqrt(n1, RPNCalcConstants.NUMBER_PRECISION)),
 	            					token[i], tokenPos);
 	                break;
+	            case "undo":
+	            	RPNValidation.insufficientParams(operator.undo(numbers), token[i], tokenPos);
+	                break;
 	            case "clear":
 	            	operator.clear(numbers);
-	                break;
-	            case "undo":
-	            	operator.undo(numbers);
 	                break;
 	            default:
 	            	operator.pushNumber(numbers, token[i], tokenPos);

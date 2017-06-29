@@ -10,7 +10,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 	
-		System.out.println("RPN Calculator Command: ");
+		System.out.println("RPN Calculator Command: (type 'bye' to exit)");
 		Scanner command = new Scanner(System.in);
 		final RPNCalculator calc = new RPNCalculator();
 	    boolean running = true;
@@ -19,8 +19,7 @@ public class Main {
 	    while(running){
 	    	commandLine = command.nextLine();
 	    	switch(commandLine){
-		        case "exit":
-		            System.out.println("Exiting the calculator...");
+		        case "bye":
 		            running = !running;
 		            break;
 		        default:
@@ -28,8 +27,6 @@ public class Main {
 						calc.doCalc(commandLine);
 					} catch (RPNCalcException rpnException) {
 						System.out.println(rpnException.getMessage());
-					} catch (ArithmeticException exception) {
-						System.out.println("Divided by zero exception");
 					}
 		        	System.out.print("Stack: ");
 		        	for (BigDecimal number : calc.getNumbers()) {

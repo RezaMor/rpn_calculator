@@ -19,8 +19,8 @@ public class RPNCalcConstants {
 	}
 	
 	public static class MESSAGES {
-		public static String NEGATIVE_SQRT = "x < 0 for sqrt(x) exception";
-		
+		public static String NEGATIVE_SQRT_MSG = "x < 0 for sqrt(x) exception";
+		public static String DIVIDED_BY_ZERO_MSG = "Divided by zero exception";
 	}
 
 }
