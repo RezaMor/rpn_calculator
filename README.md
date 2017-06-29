@@ -56,3 +56,11 @@ Numbers are pushed on to the stack. Operators operate on numbers that are on the
 	
 * After displaying the warning, all further processing of the string terminates and the current state of the stack is displayed.
 
+## Running Tests
+
+	Please run the test in eclipse, IntelliJ IDEA, or other suitable IDEs
+
+
+
+
+
